@@ -4,6 +4,11 @@ FROM ruby:3.0-bullseye as base
 # Running dependencies will install the necessary dependencies to start a rails app.
 RUN apt-get update -qq && apt-get install -y build-essential apt-utils libpq-dev nodejs
 
+# Add the user setup here
+ARG UID=501
+ARG GID=20
+RUN groupadd -g $GID appgroup && useradd -m -u $UID -g $GID appuser
+
 # create working directory inside docker
 WORKDIR /docker/app
 
