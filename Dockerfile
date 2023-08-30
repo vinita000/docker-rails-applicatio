@@ -36,7 +36,9 @@ CMD [ "bundle","exec", "puma", "config.ru"]
 
 # Using docker-compose, we can now eliminate network creation (docker-compose automatically creates a network for containers)
 
-
+# docker-compose up -d
+# docker-compose run rails rails db:create
+# docker run -p 3000:3000 rails_docker:1
 
 
 
