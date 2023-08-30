@@ -10,7 +10,7 @@ services:
     #   - ./env/postgres.env # you can also define env variables like this.
   rails:  #second container is the rails 
     build: ./ 
-    user: 501:20
+    user: '501:20'
     ports:
       - '3000:3000'
     volumes:
